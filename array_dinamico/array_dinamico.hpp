@@ -21,10 +21,20 @@ public:
     ArrayDinamico(const ArrayDinamico&) = delete;
     ArrayDinamico& operator=(const ArrayDinamico&) = delete;
 
-    void push_back(int x){
+    void push_back(int x) {
+        if (tam == cap) {
+            int* nuevo = new int[cap * 2];
+            for (int j = 0; j < tam; j++) {
+                nuevo[j] = datos[j];
+            }
+            delete [] datos;
+            datos = nuevo;
+            cap = cap * 2;
+        }
         datos[tam] = x;
         tam++;
     }
+
     int get(int i) const {return datos[i]; }
     int size() const {return tam; }
     int capacity() const {return 0; }
