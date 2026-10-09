@@ -19,6 +19,12 @@ int main() {
     assert(a.find(999) == -1);
     a.print();
 
+    a.insert(1, 99);
+    assert(a.size() == 4);
+    assert(a.get(1) == 99);
+    assert(a.get(2) == 20);
+    a.print();   
+
     std::cout << "Todos los tests OK" << std::endl;
     return 0;
 }

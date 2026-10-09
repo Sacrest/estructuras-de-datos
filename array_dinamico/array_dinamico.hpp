@@ -46,8 +46,26 @@ public:
     int get(int i) const {return datos[i]; }
     int size() const {return tam; }
     int capacity() const {return cap; }
-    void insert(int pos, int x) {}
+
+    void insert(int pos, int x) {
+            if (tam == cap) {
+                int* nuevo = new int[cap * 2];
+                for (int j = 0; j < tam; j++) {
+                nuevo[j] = datos[j];
+                }
+                delete [] datos;
+                datos = nuevo;
+                cap = cap * 2;
+            }
+        for (int j = tam; j > pos; j--) {
+            datos [j] = datos [j - 1];
+        }
+        datos[pos] = x;
+        tam++;
+
+    }
     void remove(int pos) {}
+
     void print() const {
         for (int j = 0; j < tam; j++) {
             std::cout << datos[j] << " ";
