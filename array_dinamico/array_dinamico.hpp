@@ -35,11 +35,23 @@ public:
         tam++;
     }
 
+    int find(int x) const {
+        for (int j = 0; j < tam; j++) {
+            if (datos[j] == x) {
+                return j;
+            }
+        }
+        return -1;}
+
     int get(int i) const {return datos[i]; }
     int size() const {return tam; }
-    int capacity() const {return 0; }
+    int capacity() const {return cap; }
     void insert(int pos, int x) {}
     void remove(int pos) {}
-    int find(int x) const {return 0;}
-    void print() const {}
+    void print() const {
+        for (int j = 0; j < tam; j++) {
+            std::cout << datos[j] << " ";
+        }
+        std::cout << std::endl;
+    }
 };

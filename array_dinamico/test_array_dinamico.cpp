@@ -15,6 +15,10 @@ int main() {
     assert(a.size() == 3);
     assert(a.get(2) == 30);
 
+    assert(a.find(20) == 1);
+    assert(a.find(999) == -1);
+    a.print();
+
     std::cout << "Todos los tests OK" << std::endl;
     return 0;
 }
