@@ -64,7 +64,12 @@ public:
         tam++;
 
     }
-    void remove(int pos) {}
+    void remove(int pos) {
+        for (int j = pos; j < tam - 1; j++) {
+            datos [j] = datos [j + 1];
+        }
+        tam--;
+    }
 
     void print() const {
         for (int j = 0; j < tam; j++) {
